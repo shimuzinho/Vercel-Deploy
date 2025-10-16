@@ -59,6 +59,10 @@ export default function App() {
         um dos meus passatempos favoritos. O jogo não só me ajuda a relaxar, mas também a melhorar minhas habilidades estratégicas e de trabalho em equipe. 
         Acredito que, ao equilibrar a faculdade com meu amor por Valorant, poderei alcançar meus objetivos profissionais e pessoais com mais motivação e foco.
       </p>
+      <img src="/images/crisManchester.jpg"/>
+      <img src="/images/crisReal.webp"/>
+      <img src="/images/crisPortugal.jpg"/>
+      <img src="/images/crisJuventus.jpg"/>
     </>
   );
 }
