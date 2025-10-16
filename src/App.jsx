@@ -1,25 +1,34 @@
 import { useEffect, useState } from 'react'
 
 export default function App() {
-  const [tempoFaltante, setTempoFaltante] = useState('');
+  const [tempoFaltante, setTempoFaltante] = useState(0);
   const [textoContagem, setTextoContagem] = useState('');
 
   useEffect(() => {
     const inicializarTempoFaltante = () => {
-      const diaFormatura = new Date(2025, 11, 15, 19, 0, 0);
+      const diaFormatura = new Date(2025, 10, 14, 0, 0, 0);
       const diaAtual = new Date();
       const tempoFaltanteInicial = diaFormatura - diaAtual;
-      setTempoFaltante(tempoFaltanteInicial);
+      if (tempoFaltante > 0) {
+        setTempoFaltante(tempoFaltanteInicial);
+      }
     };
 
     inicializarTempoFaltante();
 
     const intervalo = setInterval(() => {
-      setTempoFaltante((prevTempoFaltante) => prevTempoFaltante - 1000);
+    setTempoFaltante((prevTempoFaltante) => {
+      if (prevTempoFaltante <= 0) {
+        clearInterval(intervalo);
+        setTextoContagem('Parabéns, chegou o grande dia da nossa formatura!');
+        return 0;
+      }
+      return prevTempoFaltante - 1000;
+    });
     }, 1000);
 
     return () => clearInterval(intervalo);
-  }, [])
+  }, []); 
 
   useEffect(() => {
     const fazerContagem = () => {
@@ -30,6 +39,10 @@ export default function App() {
       const minutos = Math.floor((tempoFaltante % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((tempoFaltante % (1000 * 60)) / (1000));
 
+      if (tempoFaltante <= 0) {
+        return;
+      }
+
       setTextoContagem(`${meses} mês(es), ${dias} dia(s), ${horas} hora(s), ${minutos} minuto(s), ${segundos} segundo(s)`);
     };
 
@@ -39,7 +52,7 @@ export default function App() {
   return (
     <>
       <h1>Pedro Rossini Lanutti de Moraes - INFO 6B</h1>
-      <h3>Contagem: {textoContagem}</h3>
+      <h3>{textoContagem}</h3>
     </>
   );
 }
