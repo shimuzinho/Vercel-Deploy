@@ -6,10 +6,10 @@ export default function App() {
 
   useEffect(() => {
     const inicializarTempoFaltante = () => {
-      const diaFormatura = new Date(2025, 10, 14, 0, 0, 0);
+      const diaFormatura = new Date(2025, 11, 15, 19, 0, 0);
       const diaAtual = new Date();
       const tempoFaltanteInicial = diaFormatura - diaAtual;
-      if (tempoFaltante > 0) {
+      if (tempoFaltanteInicial > 0) {
         setTempoFaltante(tempoFaltanteInicial);
       }
     };
@@ -53,6 +53,12 @@ export default function App() {
     <>
       <h1>Pedro Rossini Lanutti de Moraes - INFO 6B</h1>
       <h3>{textoContagem}</h3>
+      <p>
+        Após a formatura meu próximo passo será começar a faculdade de Ciência da Computação. Estou empolgado para aprender mais sobre tecnologia, 
+        programação e desenvolver habilidades que me preparem para a carreira na área de TI. Além dos estudos, também pretendo continuar jogando Valorant, 
+        um dos meus passatempos favoritos. O jogo não só me ajuda a relaxar, mas também a melhorar minhas habilidades estratégicas e de trabalho em equipe. 
+        Acredito que, ao equilibrar a faculdade com meu amor por Valorant, poderei alcançar meus objetivos profissionais e pessoais com mais motivação e foco.
+      </p>
     </>
   );
 }
