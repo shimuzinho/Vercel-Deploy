@@ -50,19 +50,23 @@ export default function App() {
   }, [tempoFaltante]);
 
   return (
-    <>
-      <h1>Pedro Rossini Lanutti de Moraes - INFO 6B</h1>
-      <h3>{textoContagem}</h3>
-      <p>
-        Após a formatura meu próximo passo será começar a faculdade de Ciência da Computação. Estou empolgado para aprender mais sobre tecnologia, 
-        programação e desenvolver habilidades que me preparem para a carreira na área de TI. Além dos estudos, também pretendo continuar jogando Valorant, 
-        um dos meus passatempos favoritos. O jogo não só me ajuda a relaxar, mas também a melhorar minhas habilidades estratégicas e de trabalho em equipe. 
+    <div className="app-container">
+      <h1 className="title">Pedro Rossini Lanutti de Moraes - INFO 6B</h1>
+      <h3 className="countdown-text">{textoContagem}</h3>
+
+      <p className="about-text">
+        Após a formatura, meu próximo passo será começar a faculdade de Ciência da Computação. Estou empolgado para aprender mais sobre tecnologia,
+        programação e desenvolver habilidades que me preparem para a carreira na área de TI. Além dos estudos, também pretendo continuar jogando Valorant,
+        um dos meus passatempos favoritos. O jogo não só me ajuda a relaxar, mas também a melhorar minhas habilidades estratégicas e de trabalho em equipe.
         Acredito que, ao equilibrar a faculdade com meu amor por Valorant, poderei alcançar meus objetivos profissionais e pessoais com mais motivação e foco.
       </p>
-      <img src="/images/crisManchester.jpg"/>
-      <img src="/images/crisReal.webp"/>
-      <img src="/images/crisPortugal.jpg"/>
-      <img src="/images/crisJuventus.jpg"/>
-    </>
+
+      <div className="image-gallery">
+        <img src="/images/crisManchester.jpg" alt="Manchester" className="gallery-image" />
+        <img src="/images/crisReal.webp" alt="Real Madrid" className="gallery-image" />
+        <img src="/images/crisPortugal.jpg" alt="Portugal" className="gallery-image" />
+        <img src="/images/crisJuventus.jpg" alt="Juventus" className="gallery-image" />
+      </div>
+    </div>
   );
 }
